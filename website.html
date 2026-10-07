@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peelo — stickers with main-character energy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6F3;--surface:#FFFFFF;--ink:#173A2B;--soft:#4F6B5E;--green:#4C9E76;--mint:#D9F0E2;--pink:#F8C3D3;--pink-d:#E98CAB;--line:#EBD9D6;
+--hd:'Bricolage Grotesque','Trebuchet MS',sans-serif;--bd:'DM Sans',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10211A;--surface:#193127;--ink:#FDE8EE;--soft:#B5CDBF;--green:#8FD1AB;--mint:#24493A;--pink:#F8C3D3;--pink-d:#F29CB8;--line:#2C4A3C}}
+:root[data-theme="dark"]{--bg:#10211A;--surface:#193127;--ink:#FDE8EE;--soft:#B5CDBF;--green:#8FD1AB;--mint:#24493A;--pink:#F8C3D3;--pink-d:#F29CB8;--line:#2C4A3C}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--bd)}
+h1,h2,h3{font-family:var(--hd);line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--pink-d);outline-offset:3px}
+svg{display:block}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1.5px solid var(--line)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font:800 26px var(--hd);text-decoration:none;color:var(--ink);background:none;border:0;padding:0}
+nav{display:flex;gap:4px}
+nav button{display:flex;align-items:center;gap:7px;background:none;border:0;color:var(--soft);padding:9px 14px;border-radius:99px;font-weight:700}
+nav button:hover{background:var(--mint);color:var(--ink)}
+nav button.on{background:var(--ink);color:var(--bg)}
+nav svg{width:20px;height:20px}
+.badge{background:var(--pink-d);color:#3a1020;border-radius:99px;font-size:12px;min-width:20px;height:20px;display:inline-grid;place-items:center;padding:0 5px}
+main{max-width:1100px;margin:auto;padding:28px 20px 80px}
+.page{display:none}.page.on{display:block}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:20px 0 40px}
+.hero h1{font-size:clamp(44px,8vw,92px);font-weight:800}
+.hero h1 span{display:inline-block;background:var(--pink);color:#173A2B;padding:0 .18em;border-radius:.2em;transform:rotate(-2deg)}
+.hero p{font-size:19px;color:var(--soft);max-width:44ch;margin:18px 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#0F2A1E;border:0;border-radius:99px;padding:14px 26px;font-weight:700;text-decoration:none;box-shadow:0 5px 0 rgba(0,0,0,.18);transition:transform .12s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.btn.alt{background:var(--pink);color:#173A2B}
+.stack{position:relative;aspect-ratio:1;background:var(--mint);border-radius:44% 56% 52% 48%/48% 44% 56% 52%}
+.stack .s{position:absolute;width:38%;filter:drop-shadow(0 6px 6px rgba(0,0,0,.18));animation:drop .7s cubic-bezier(.3,1.5,.5,1) backwards}
+.s:nth-child(1){left:8%;top:10%;rotate:-12deg}.s:nth-child(2){right:8%;top:6%;rotate:10deg;animation-delay:.12s}
+.s:nth-child(3){left:30%;top:34%;rotate:4deg;width:44%;animation-delay:.24s}.s:nth-child(4){left:6%;bottom:8%;rotate:14deg;animation-delay:.36s}
+.s:nth-child(5){right:6%;bottom:10%;rotate:-8deg;animation-delay:.48s}
+@keyframes drop{from{transform:translateY(-60px) scale(1.3);opacity:0}}
+.marquee{background:var(--ink);color:var(--bg);border-radius:18px;padding:14px 20px;display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;font:700 17px var(--hd);margin-bottom:50px}
+.marquee b{color:var(--pink)}
+h2.t{font-size:clamp(32px,5vw,52px);margin-bottom:6px}
+.sub{color:var(--soft);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:16px;display:flex;flex-direction:column}
+.card .art{background:var(--mint);border-radius:16px;padding:18px;margin-bottom:12px}
+.card:nth-child(3n+2) .art{background:var(--pink)}
+.card .art svg{width:100%;max-width:150px;margin:auto;transition:rotate .2s}
+.card:hover .art svg{rotate:-8deg}
+.card h3{font-size:20px}
+.card small{color:var(--soft)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+.price{font:800 20px var(--hd)}
+.add{background:var(--ink);color:var(--bg);border:0;border-radius:99px;width:42px;height:42px;display:grid;place-items:center}
+.add:hover{background:var(--pink-d);color:#3a1020}
+.add svg{width:20px;height:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:7px 16px;font-weight:500}
+.chip.on{background:var(--pink);border-color:var(--pink-d);color:#173A2B;font-weight:700}
+.vibes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:60px}
+.vibe{border-radius:24px;padding:24px;background:var(--mint)}
+.vibe:nth-child(2){background:var(--pink);color:#173A2B}
+.vibe svg{width:34px;height:34px;margin-bottom:10px}
+.vibe h3{font-size:22px;margin-bottom:6px}.vibe p{margin:0}
+.cart{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
+.item{display:grid;grid-template-columns:80px 1fr auto;gap:14px;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:20px;padding:12px;margin-bottom:12px}
+.item .th{background:var(--mint);border-radius:14px;padding:8px}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-weight:700}
+.rm{background:none;border:0;color:var(--soft);padding:6px}
+.rm svg{width:20px;height:20px}
+.sum{background:var(--ink);color:var(--bg);border-radius:24px;padding:24px}
+.sum .l{display:flex;justify-content:space-between;margin:8px 0}
+.sum .tot{font:800 28px var(--hd);border-top:1.5px dashed rgba(255,255,255,.3);padding-top:12px;margin-top:12px}
+.sum .btn{width:100%;justify-content:center;margin-top:14px;background:var(--pink);color:#173A2B}
+.empty{text-align:center;padding:50px 20px;background:var(--surface);border:2px dashed var(--line);border-radius:24px}
+.empty svg{width:90px;margin:0 auto 10px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+form{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:24px;display:grid;gap:14px}
+label{font-weight:700;font-size:14px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:4px}
+textarea{min-height:120px;resize:vertical}
+.info{display:grid;gap:14px;align-content:start}
+.info a{display:flex;align-items:center;gap:14px;background:var(--mint);border-radius:18px;padding:16px;text-decoration:none;font-weight:700}
+.info a:nth-child(2){background:var(--pink);color:#173A2B}
+.info svg{width:26px;height:26px;flex:none}
+footer{text-align:center;color:var(--soft);padding:30px 20px 40px;font-size:14px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));translate:-50% 30px;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:99px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:20;text-align:center}
+#toast.show{opacity:1;translate:-50% 0}
+@media (max-width:760px){
+.hero,.cart,.contact{grid-template-columns:1fr}
+nav span.lbl{display:none}nav button{padding:9px 11px}
+.logo{font-size:22px}
+.item{grid-template-columns:64px 1fr auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.card{rotate:-.8deg;position:relative;transition:rotate .2s}
+.card:nth-child(even){rotate:.8deg}
+.card:hover{rotate:0deg}
+.card::after{content:"";position:absolute;top:-1px;right:-1px;width:34px;height:34px;border-radius:0 24px 0 18px;background:linear-gradient(225deg,var(--bg) 50%,var(--pink-d) 50%);box-shadow:-2px 2px 4px rgba(0,0,0,.12)}
+.card .art{border:3px dashed rgba(255,255,255,.85);outline:1.5px solid var(--line)}
+.sheet{margin:56px 0 0;background:var(--surface);border:2px dashed var(--pink-d);border-radius:28px;padding:26px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+.sheet svg{width:84px;filter:drop-shadow(0 4px 4px rgba(0,0,0,.15))}
+.sheet svg:nth-child(odd){rotate:-9deg}.sheet svg:nth-child(even){rotate:8deg;translate:0 8px}
+.sheet svg:nth-child(3n){rotate:3deg}
+.hero h1 span{box-shadow:0 0 0 4px #fff,0 6px 10px rgba(0,0,0,.15)}
+.tag{display:inline-block;background:#fff;color:#173A2B;border-radius:99px;padding:5px 14px;font:800 14px var(--hd);rotate:-3deg;box-shadow:0 3px 8px rgba(0,0,0,.15);margin-bottom:14px;border:2px solid var(--pink)}
+.card .art img,.th img,.s img,.sheet img{width:100%;height:auto;display:block;object-fit:contain}
+.card .art img{max-width:170px;margin:auto}
+.sheet img{width:84px;filter:drop-shadow(0 4px 4px rgba(0,0,0,.15))}
+.sheet img:nth-child(odd){rotate:-9deg}.sheet img:nth-child(even){rotate:8deg;translate:0 8px}
+
+.card .art{aspect-ratio:4/5;display:grid;place-items:center;position:relative;cursor:zoom-in;padding:12px;overflow:hidden}
+.card .art img{max-width:100%;max-height:100%;width:auto;height:100%;object-fit:contain;transition:scale .25s}
+.card:hover .art img{scale:1.06}
+.zi{position:absolute;right:10px;bottom:8px;background:var(--ink);color:var(--bg);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:16px}
+#zoom{position:fixed;inset:0;z-index:30;background:rgba(10,25,18,.72);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+#zoom.on{display:flex}
+.zpanel{position:relative;background:var(--surface);border-radius:28px;padding:18px;max-width:520px;width:100%;max-height:100%;overflow:auto;animation:zin .25s cubic-bezier(.3,1.4,.5,1)}
+@keyframes zin{from{scale:.85;opacity:0}}
+.zimg{background:var(--mint);border-radius:20px;padding:16px;margin-bottom:12px;display:grid;place-items:center}
+.zimg img{max-width:100%;max-height:62vh;object-fit:contain}
+.zimg svg{width:70%;max-width:280px}
+.zpanel h3{font-size:26px}
+.zx{position:absolute;top:12px;right:12px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);font-size:16px}
+.sum form{background:none;border:0;padding:0;margin-top:14px;gap:10px;color:var(--bg)}
+.sum label{font-weight:700;font-size:14px}
+.sum input,.sum textarea{color:var(--ink);background:var(--bg);border-color:transparent}
+.sum textarea{min-height:80px}
+.back{background:none;border:0;color:var(--bg);text-decoration:underline;padding:6px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<button class="logo" data-go="home" aria-label="Peelo home"><svg id="logo" width="38" height="38" viewBox="0 0 100 100"></svg>Peelo</button>
+<nav aria-label="Main">
+<button data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="lbl">Home</span></button>
+<button data-go="shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.200 5.900 20.600l1.400-6.800L2.200 9.100l6.900-.8z"/></svg><span class="lbl">Shop</span></button>
+<button data-go="panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.200 12H6.200zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="lbl">Panier</span><span class="badge" id="count">0</span></button>
+<button data-go="contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.800 7L3 20.500 5 15a8 8 0 1 1 16-3z"/></svg><span class="lbl">Contact</span></button>
+</nav></div></header>
+
+<main>
+<section class="page" id="home">
+<div class="hero">
+<div><span class="tag">✿ new drop is here</span><h1>Stick it. <span>Own it.</span></h1>
+<p>Born in Tunisia . Made to stick .</p>
+<button class="btn" data-go="shop">Shop stickers</button></div>
+<div class="stack" id="stack" aria-hidden="true"></div></div>
+<h2 class="t">Fresh drops</h2><p class="sub">Drop 01</p>
+<div class="grid" id="featured"></div>
+<div class="sheet" id="sheet" aria-hidden="true"></div>
+<div class="vibes">
+<div class="vibe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-8-5-8-11a4.500 4.500 0 0 1 8-2.500A4.500 4.500 0 0 1 20 10c0 6-8 11-8 11z"/></svg><h3>Original art</h3><p>No copy-paste designs. Every sticker is ours.</p></div>
+<div class="vibe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8v12M3 13h18M12 8c-3 0-5-4-2-4 2 0 2 4 2 4zm0 0c3 0 5-4 2-4-2 0-2 4-2 4z"/></svg><h3>Delivery in Sfax</h3><p>For now we deliver only in Sfax. More cities soon.</p></div>
+</div></section>
+
+<section class="page" id="shop">
+<h2 class="t">Shop</h2><p class="sub">Tap a poster to zoom in. Tap + to add it to your panier.</p>
+<div class="grid" id="all"></div></section>
+
+<section class="page" id="panier">
+<h2 class="t">Your panier</h2><p class="sub" id="psub"></p>
+<div id="cartBox"></div></section>
+
+<section class="page" id="contact">
+<h2 class="t">Say hi</h2><p class="sub">Custom order? Collab idea? Wrong sticker? Tell us.</p>
+<div class="contact">
+<form id="cf"><div><label for="n">Name</label><input id="n" required></div>
+<div><label for="e">Email</label><input id="e" type="email" required></div>
+<div><label for="m">Message</label><textarea id="m" required></textarea></div>
+<button class="btn" type="submit">Send message</button></form>
+<div class="info">
+<a href="mailto:hello@peelo.shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@peelo.shop</a>
+<a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r=".8" fill="currentColor"/></svg>@peelo.stickers</a>
+</div></div></section>
+</main>
+<footer>© 2026 Peelo · Stick it. Own it.</footer>
+<div id="zoom" role="dialog" aria-modal="true" aria-label="Sticker preview"><div class="zpanel"><button id="zx" class="zx" data-zclose aria-label="Close">✕</button><div id="zbody"></div></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+const P=[
+{id:1,img:'MATCHADIARY',n:'MATCHA DIARY',t:'smile',a:'#8FD1AB',b:'#173A2B',p:10.5},
+{id:2,img:'ESPRESSOERA',n:'ESPRESSO ERA',t:'star',a:'#F29CB8',b:'#fff',p:10.5},
+{id:3,img:'justbecause',n:'JUST BECAUSE',t:'cloud',a:'#fff',b:'#8FD1AB',p:10.5},
+{id:4,img:'NIGHTDRIVE',n:'NIGHT DRIVE',t:'heart',a:'#F29CB8',b:'#fff',p:10.5},
+{id:5,img:'WTF',n:'WTF',t:'flower',a:'#F8C3D3',b:'#E3A800',p:10.5},
+{id:6,img:'IT GIRL',n:'IT GIRL',t:'cherry',a:'#E8577E',b:'#4C9E76',p:10.5},
+{id:7,img:'RED FLAG',n:'RED FLAG',t:'moon',a:'#D9F0E2',b:'#4C9E76',p:10.5},
+{id:8,img:'AUTUMN GIRL',n:'AUTUMN GIRL',t:'bolt',a:'#F8C3D3',b:'#173A2B',p:5},
+{id:9,img:'7 OCTOBER',n:'7 OCTOBER',t:'smile',a:'#F8C3D3',b:'#173A2B',p:5},
+{id:10,img:'5',n:'5',t:'star',a:'#8FD1AB',b:'#fff',p:5}];
+const W='stroke="#fff" stroke-width="9" stroke-linejoin="round" paint-order="stroke"';
+function art(t,a,b){let s='';
+if(t=='smile')s=`<circle cx="50" cy="50" r="38" fill="${a}" ${W}/><circle cx="37" cy="42" r="5" fill="${b}"/><circle cx="63" cy="42" r="5" fill="${b}"/><path d="M33 58q17 18 34 0" fill="none" stroke="${b}" stroke-width="5" stroke-linecap="round"/>`;
+if(t=='star')s=`<path d="M50 8l11 27 29 3-22 19 7 29-25-15-25 15 7-29L10 38l29-3z" fill="${a}" ${W}/><circle cx="43" cy="50" r="3" fill="#173A2B"/><circle cx="57" cy="50" r="3" fill="#173A2B"/>`;
+if(t=='cloud')s=`<path d="M28 72a16 16 0 0 1 0-32 22 22 0 0 1 42-4 18 18 0 0 1 4 36z" fill="${a}" ${W}/><path d="M38 60q4 5 8 0M54 60q4 5 8 0" stroke="${b}" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+if(t=='flower')s=[0,72,144,216,288].map(r=>`<ellipse cx="50" cy="26" rx="14" ry="19" fill="${a}" ${W} transform="rotate(${r} 50 50)"/>`).join('')+`<circle cx="50" cy="50" r="12" fill="${b}"/>`;
+if(t=='cherry')s=`<path d="M62 14C58 34 40 50 30 66M62 14C66 36 70 52 72 64" fill="none" stroke="${b}" stroke-width="5" stroke-linecap="round"/><path d="M62 14q16-4 22 8-14 4-22-8z" fill="${b}" ${W}/><circle cx="28" cy="72" r="19" fill="${a}" ${W}/><circle cx="72" cy="72" r="19" fill="${a}" ${W}/>`;
+if(t=='moon')s=`<path d="M64 10A40 40 0 1 0 90 62 32 32 0 0 1 64 10z" fill="${a}" ${W}/><circle cx="30" cy="55" r="3" fill="${b}"/><path d="M26 66q8 8 16 0" stroke="${b}" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+if(t=='bolt')s=`<path d="M58 6L18 56h26l-6 38 42-54H54z" fill="${a}" ${W}/>`;
+if(t=='heart')s=`<path d="M50 88S10 62 10 36a20 20 0 0 1 40-6 20 20 0 0 1 40 6c0 26-40 52-40 52z" fill="${a}" ${W}/><path d="M24 30q4-8 12-8" stroke="${b}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>`;
+return `<svg viewBox="0 0 100 100" aria-hidden="true">${s}</svg>`}
+const EX=['png','jpg','jpeg','webp'];
+function fail(i){const n=+i.dataset.n+1;if(n<EX.length){i.dataset.n=n;i.src='stickers/'+i.dataset.b+'.'+EX[n]}else{const p=P.find(x=>x.id==i.dataset.id);i.outerHTML=art(p.t,p.a,p.b)}}
+function pic(p){if(!p.img)return art(p.t,p.a,p.b);const d=p.img.includes('.');return `<img src="stickers/${d?p.img:p.img+'.png'}" data-b="${p.img}" data-n="${d?9:0}" data-id="${p.id}" alt="${p.n}" onerror="fail(this)">`}
+const $=s=>document.querySelector(s);
+let cart={},cat='All',co=0,last=null;
+// PUT YOUR WHATSAPP NUMBER HERE (country code first, no + or spaces). Example Tunisia: 21650123456
+const WA='21650775716';
+const EMAIL='peelostickers@gmail.com'; 
+const INSTA='peel.oshop';   
+const W3KEY='';//aaaaaaaaaaaaa
+try{cart=JSON.parse(localStorage.getItem('peelo')||'{}')}catch(e){}
+function save(){try{localStorage.setItem('peelo',JSON.stringify(cart))}catch(e){}}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.x);toast.x=setTimeout(()=>t.classList.remove('show'),1800)}
+const plus='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
+const money=v=>v.toFixed(3).replace(/\.?0+$/,'')+' DT';
+function cardHTML(p){return `<article class="card"><div class="art" data-zoom="${p.id}" tabindex="0" role="button" aria-label="Zoom ${p.n}">${pic(p)}<span class="zi">⌕</span></div><h3>${p.n}</h3><div class="row"><span class="price">${money(p.p)}</span><button class="add" data-add="${p.id}" aria-label="Add ${p.n} to panier">${plus}</button></div></article>`}
+function renderShop(){$('#all').innerHTML=P.map(cardHTML).join('')}
+function totals(){const ids=Object.keys(cart).filter(k=>cart[k]>0);let sub=0,n=0;ids.forEach(k=>{const p=P.find(x=>x.id==k);sub+=p.p*cart[k];n+=cart[k]});const ship=ids.length?7:0;return{ids,sub,n,ship,total:sub+ship}}
+function renderCart(){
+if(co==2&&Object.keys(cart).some(k=>cart[k]>0))co=0;
+if(co==2){$('#count').textContent=0;$('#psub').textContent='';const o=last;
+const msg='Hello Peelo! New order:\n'+o.lines.join('\n')+'\nShipping: '+money(o.ship)+'\nTotal: '+money(o.total)+'\n\nName: '+o.name+'\nPhone: '+o.phone+'\nAddress (Sfax): '+o.addr;
+$('#cartBox').innerHTML=`<div class="empty">${art('heart','#F29CB8','#fff')}<h3>Thank you ${o.name.replace(/[<>&]/g,'')}!</h3><p class="sub">Last step: tap the button to send your order to us on WhatsApp. It is only confirmed once we receive it.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}">Send order on WhatsApp</a></div>`;return}
+const ids=Object.keys(cart).filter(k=>cart[k]>0);
+const n=ids.reduce((s,k)=>s+cart[k],0);
+$('#count').textContent=n;
+$('#psub').textContent=n?`${n} sticker${n>1?'s':''} ready to stick.`:'';
+if(!ids.length){$('#cartBox').innerHTML=`<div class="empty">${art('cloud','#fff','#8FD1AB')}<h3>Your panier is empty</h3><p class="sub">Your laptop is looking naked. Fix that.</p><button class="btn" data-go="shop">Browse the shop</button></div>`;return}
+let sub=0;
+const items=ids.map(k=>{const p=P.find(x=>x.id==k),q=cart[k];sub+=p.p*q;
+return `<div class="item"><div class="th">${pic(p)}</div><div><strong>${p.n}</strong><div class="qty"><button data-dec="${k}" aria-label="Less">−</button><span>${q}</span><button data-inc="${k}" aria-label="More">+</button></div></div><div><div class="price">${money(p.p*q)}</div><button class="rm" data-rm="${k}" aria-label="Remove ${p.n}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button></div></div>`}).join('');
+const ship=7,disc=0;
+$('#cartBox').innerHTML=`<div class="cart"><div>${items}</div><aside class="sum"><h3>Summary</h3><div class="l"><span>Subtotal</span><span>${money(sub)}</span></div><div class="l"><span>Shipping</span><span>${money(ship)}</span></div><div class="l tot"><span>Total</span><span>${money(sub-disc+ship)}</span></div>${co==1?'':'<button class="btn" data-checkout>Checkout</button>'}</aside></div>`;
+if(co==1){$('.sum').insertAdjacentHTML('beforeend',`<form id="co"><label>Name<input id="cn" required autocomplete="name"></label><label>Phone number<input id="cp" type="tel" inputmode="tel" required autocomplete="tel"></label><label>Address in Sfax<textarea id="ca" required></textarea></label><button class="btn" type="submit">Confirm order</button><button type="button" class="back" data-back>← Back</button></form>`)}}
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id==id));
+document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go==id));scrollTo(0,0)}
+function openZ(id){const p=P.find(x=>x.id==id);$('#zbody').innerHTML=`<div class="zimg">${pic(p)}</div><h3>${p.n}</h3><div class="row"><span class="price">${money(p.p)}</span><button class="btn" data-zadd="${p.id}">Add to panier</button></div>`;$('#zoom').classList.add('on');$('#zx').focus()}
+function closeZ(){$('#zoom').classList.remove('on')}
+document.addEventListener('keydown',e=>{if(e.key=='Escape')closeZ();if(e.key=='Enter'&&e.target.dataset.zoom)openZ(e.target.dataset.zoom)});
+document.addEventListener('click',e=>{
+if(e.target.id=='zoom'){closeZ();return}
+const z=e.target.closest('[data-zoom]');if(z){openZ(z.dataset.zoom);return}
+const t=e.target.closest('button');if(!t)return;const d=t.dataset;
+if(d.go){go(d.go);closeZ()}
+
+if(d.zadd){cart[d.zadd]=(cart[d.zadd]||0)+1;save();renderCart();toast('Added to panier ✿');closeZ()}
+if(d.zclose!==undefined)closeZ();
+if(d.add){cart[d.add]=(cart[d.add]||0)+1;save();renderCart();toast('Added to panier ✿')}
+if(d.inc){cart[d.inc]++;save();renderCart()}
+if(d.dec){cart[d.dec]=Math.max(0,cart[d.dec]-1);save();renderCart()}
+if(d.rm){delete cart[d.rm];save();renderCart()}
+if('checkout' in d){co=1;renderCart();$('#cn').focus()}
+if('back' in d){co=0;renderCart()}});
+document.addEventListener('submit',e=>{if(e.target.id!='co')return;e.preventDefault();const t=totals();
+last={name:$('#cn').value.trim(),phone:$('#cp').value.trim(),addr:$('#ca').value.trim(),ship:t.ship,total:t.total,lines:t.ids.map(k=>{const p=P.find(x=>x.id==k);return '- '+p.n+' x'+cart[k]+' ('+money(p.p*cart[k])+')'})};
+cart={};save();co=2;renderCart();scrollTo(0,0)});
+$('#cf').addEventListener('submit',e=>{e.preventDefault();e.target.reset();toast('Message sent. We reply within 24h ✿')});
+$('#logo').innerHTML=`<path d="M50 6C74 6 94 26 94 50c0 18-10 32-24 40L50 70 30 90C16 82 6 68 6 50 6 26 26 6 50 6z" fill="#F8C3D3" stroke="#4C9E76" stroke-width="6" stroke-linejoin="round"/><path d="M94 50c0 18-10 32-24 40L50 70l30-12z" fill="#D9F0E2" stroke="#4C9E76" stroke-width="6" stroke-linejoin="round"/><circle cx="36" cy="44" r="5" fill="#4C9E76"/><circle cx="58" cy="44" r="5" fill="#4C9E76"/><path d="M34 58q12 12 24 0" fill="none" stroke="#4C9E76" stroke-width="5" stroke-linecap="round"/>`;
+$('#stack').innerHTML=['smile','star','cloud','heart','flower'].map((t,i)=>{const p=P.find(x=>x.t==t);return `<div class="s">${pic(p)}</div>`}).join('');
+$('#featured').innerHTML=P.slice(0,4).map(cardHTML).join('');
+$('#sheet').innerHTML=P.map(pic).join('');
+renderShop();renderCart();go('home');
+</script>
+</body>
+</html>
